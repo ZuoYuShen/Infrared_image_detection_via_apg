@@ -20,5 +20,5 @@ The detection is formulated as an optimization problem of recovering low_rank an
 4. 对于第4步，文章中根据重建图像的均值和方差来自适应选择阈值，但是观察发现，重建后的图像中的虚警为负数，所以，在算法中，我选择了以0为阈值，大于0即为目标。
 
 # 使用
-1. 程序中的矩阵都在GPU上定义的，在使用之前，先在命令行窗口下输入命令：gpuDevice查看是否支持该类型的矩阵运算。
+1. 程序中的矩阵都在GPU上定义的，在使用之前，先在命令行窗口下输入命令：gpuDevice 查看是否支持该类型的矩阵运算。
 2. 一张图片的处理为20s左右。
