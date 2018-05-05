@@ -2,7 +2,7 @@
 The detection is formulated as an optimization problem of recovering low_rank and sparse matrices via apg algorithm.  
 
 # 参考文献
-[Infrafed patch-image model for small target detection in a singe image](https://ieeexplore.ieee.org/document/6595533/)
+[Infrared Patch-Image Model for Small Target Detection in a Single Image](https://ieeexplore.ieee.org/document/6595533/)
 
 # 整体过程
 1. 通过对图像进行滑窗处理得到其patch image D.
@@ -17,3 +17,7 @@ The detection is formulated as an optimization problem of recovering low_rank an
 2. 对于APG算法的参数选择，论文选择lamda = 1/sqrt(max(m,n)), eta = 0.99, mu_0 = s2, mu_bar = 0.05s4. s2,s4是D中第二大和第四大的奇异值。但是在实际应用中，发现eta参数取0.9的影响不大，但是可以加速收敛，权衡之下，选择使用eta = 0.9。
 3. 对于重建，将patch image 中的每一列按照patch在原图像中的位置，将patch image投影到一个三维矩阵中，判断三维矩阵的第三维度，若都为零，则该重建图像该位置的像素值就为0，若不全为0，则将第三维中像素为0的点去除，剩下的点中取中值作为该点的像素值。
 4. 对于第4步，文章中根据重建图像的均值和方差来自适应选择阈值，但是观察发现，重建后的图像中的虚警为负数，所以，在算法中，我选择了以0为阈值，大于0即为目标。
+
+# 使用
+1. 程序中的矩阵都在GPU上定义的，在使用之前，先在命令行窗口下输入命令：gpuDevice查看是否支持该类型的矩阵运算。
+2. 一张图片的处理为20s左右。
