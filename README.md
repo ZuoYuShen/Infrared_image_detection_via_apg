@@ -3,6 +3,7 @@ The detection is formulated as an optimization problem of recovering low_rank an
 
 # 参考文献
 [Infrared Patch-Image Model for Small Target Detection in a Single Image](https://ieeexplore.ieee.org/document/6595533/)
+[APG(Accelerated Proximal Gradient)算法推导](http://www.docin.com/p-2104320979.html)
 
 # 整体过程
 1. 通过对图像进行滑窗处理得到其patch image D.
