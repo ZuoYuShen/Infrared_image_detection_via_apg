@@ -1,5 +1,5 @@
 # Infrared_image_detection_via_apg
-The detection is formulated as an optimization problem of recovering low_rank and sparse matrices via apg algorithm.
+The detection is formulated as an optimization problem of recovering low_rank and sparse matrices via apg algorithm.  
 #整体过程
 1. 通过对图像进行滑窗处理得到其patch image D.
 2. 使用APG算法估计低秩的背景patch image B 和稀疏的目标patch image T.
