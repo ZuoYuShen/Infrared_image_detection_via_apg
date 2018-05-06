@@ -21,4 +21,4 @@ The detection is formulated as an optimization problem of recovering low_rank an
 
 # 使用
 1. 程序中的矩阵都在GPU上定义的，在使用之前，先在命令行窗口下输入命令：gpuDevice 查看是否支持该类型的矩阵运算。若不支持，则将程序中所有gpuarray项改为普通的matlab矩阵即可，同时将gather()语句注释掉。
-2. 一张图片的处理为20s左右。
+2. 实验平台，CPU i7-6700HQ @ 2.6GHz,GPU NVIDIA GTX960M, 一张图片的处理为20s左右。
